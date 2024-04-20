@@ -7,13 +7,9 @@ include('db_connect.php');
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AUTOMATIC WAREHOUSE</title>
-    <!--bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!--style css-->
-    <link rel="stylesheet" href="css/style.css">
+    <?php
+    include("head.php");
+    ?>
 </head>
 
 <body>
@@ -23,7 +19,7 @@ include('db_connect.php');
                     <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
                 </svg></a>
             <div>
-                <form action="db_login.php" method="post">
+                <form action="db_login.php" method="post" name="login_form">
                     <h2>sign in</h2>
                     <?php if (isset($_SESSION['errors'])) : ?>
                         <div class="errors">

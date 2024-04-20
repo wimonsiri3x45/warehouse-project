@@ -14,23 +14,16 @@ $result = mysqli_query($conn, $sql);
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AUTOMATIC WAREHOUSE</title>
-    <!-- css -->
-    <link rel="stylesheet" href="css/style.css">
+    <?php
+    include("head.php");
+    ?>
 </head>
 
 <body>
-    <div class="navbar">
-        <div class=logo-nav><a href="home.php">Warehouse</a></div>
-        <div class="boxbar">
-            <button class="nav-item"><a href="checkin.php"> Check in</a></button>
-            <button class="nav-item "><a href="checkout.php"> Check out</a></button>
-            <button class="nav-item"><a href="db_logout.php">Logout</a></button>
-        </div>
-    </div>
-    </div>
+
+    <?php
+    include("navbar.php");
+    ?>
 
     <div class="content">
         <!-- noti message -->
