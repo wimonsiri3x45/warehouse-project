@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "warehouse";
+$dbname = "mywarehouse";
 
 // Crate Connection//
 $conn = mysqli_connect($servername, $username, $password, $dbname);

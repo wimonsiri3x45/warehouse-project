@@ -333,6 +333,7 @@ table {
 
 }
 
+
 .popup-container.active {
     opacity: 1;
     pointer-events: auto;
@@ -403,7 +404,7 @@ table {
 /* check-out */
 .right-side {
     width: 30%;
-    padding: 40px;
+    padding: 70px 40px 0 40px;
     background-color: var(--dark-green);
     color: var(--white);
     text-align: left;
@@ -413,7 +414,7 @@ table {
     font-weight: 600;
 }
 
-.left-side li {
+.left-side li.box {
     display: flex;
     list-style-type: none;
     padding: 30px 90px;
@@ -423,6 +424,10 @@ table {
     cursor: pointer;
 }
 
+.box.active{
+    background-color: var(--orange);
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -430,7 +435,7 @@ form {
 }
 
 .right-side select#product-id,
-select#product-color {
+select#storage-id {
     padding: 10px;
     border-radius: 10px;
     border: none;

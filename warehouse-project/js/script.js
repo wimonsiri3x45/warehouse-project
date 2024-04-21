@@ -23,3 +23,9 @@ $(document).ready(function () {
         alert("Check in successfully")
     });
 });
+$(document).ready(function () {
+    $("#checkout-check").click(function () {
+        $("form").submit();
+        alert("Check out successfully")
+    });
+});

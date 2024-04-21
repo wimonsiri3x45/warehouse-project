@@ -5,4 +5,4 @@
         <button class="nav-item <?php if ($page == "checkout") { ?>active<?php } ?>"><a href="checkout.php"> Check out</a></button>
         <button class="nav-item"><a href="db_logout.php">Logout</a></button>
     </div>
-</div>
+</div> 

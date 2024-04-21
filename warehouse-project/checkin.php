@@ -6,7 +6,6 @@ include('db_connect.php');
 if (!isset($_SESSION['username'])) {
     header('location: login.php');
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -29,14 +28,38 @@ if (!isset($_SESSION['username'])) {
 
         <?php
         include("product.php");
+        $sql = "SELECT * FROM storage";
+        $result = mysqli_query($conn, $sql);
+
         ?>
 
-        <div class="right-side1">
-            <div>
-                <button class="show-popup" type="button">
-                    <p>check in</p>
-                </button>
-            </div>
+        <div class="right-side">
+            <h2>CHECK IN</h2>
+            <form action="db_checkin.php" method="post">
+                <lable for="product-id">Product ID</lable>
+                <select name="Product-id" id="product-id">
+                    <option value="">Choose...</option>
+
+                </select>
+                <br>
+                <lable for="storage-id">Storage ID</lable>
+                <select name="storage-id" id="storage-id">
+                    <option value="">Choose...</option>
+
+                    <?php
+                    while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                        <option value="<?= $row["storage_Name"]; ?>"><?= $row["storage_Name"]; ?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
+                <div>
+                    <button class="show-popup btn2" type="submit">
+                        <p>Submit</p>
+                    </button>
+                </div>
+            </form>
         </div>
         <!-- pop up -->
         <div class="popup-container">

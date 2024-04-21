@@ -51,12 +51,14 @@ $result = mysqli_query($conn, $sql);
                     <th>ID</th>
                     <th>Username</th>
                     <th>Create_at</th>
+                    <th>Update_at</th>
                 </tr>
                 <?php while ($row = $result->fetch_assoc()) : ?>
                     <tr>
                         <td><?php echo $row['id']; ?></td>
                         <td><?php echo $row['username']; ?></td>
-                        <td><?php echo $row['create_at']; ?></td>
+                        <td><?php echo $row['created_at']; ?></td>
+                        <td><?php echo $row['updated_at']; ?></td>
                     </tr>
                 <?php endwhile ?>
             </table>
