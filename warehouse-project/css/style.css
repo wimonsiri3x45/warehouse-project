@@ -341,8 +341,7 @@ table {
 .popup-container .popup-box {
     width: 480px;
     background-color: var(--white);
-    border: 2px solid var(--dark-gray);
-    border-radius: 25px 25px 0 25px;
+    border-radius: 25px;
     box-shadow: var(--shadow2);
     padding: 25px 30px;
 }
