@@ -26,13 +26,13 @@ if (!isset($_SESSION['username'])) {
     ?>
 
     <div class="space2">
-
-        <?php
-        include("product.php");
-        $sql = "SELECT * FROM storage";
-        $result = mysqli_query($conn, $sql);
-        ?>
-
+        <div class="left-side">
+            <?php
+            include("product.php");
+            $sql = "SELECT * FROM storage";
+            $result = mysqli_query($conn, $sql);
+            ?>
+        </div>
         <div class="right-side">
             <h2>CHECK OUT</h2>
             <form action="db_checkout.php" method="post">
