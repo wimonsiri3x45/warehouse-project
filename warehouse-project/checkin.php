@@ -25,43 +25,42 @@ if (!isset($_SESSION['username'])) {
     ?>
 
     <div class="space2">
+        <div class="left-side">
+            <?php if (isset($_SESSION['success'])) : ?>
+                <div class="success">
+                    <p>
+                        <?php
+                        echo $_SESSION['success'];
+                        unset($_SESSION['success']);
+                        ?>
+                    </p>
+                </div>
+            <?php endif ?>
+            <?php
+            include("product.php");
+            $sql = "SELECT * FROM storage";
+            $result = mysqli_query($conn, $sql);
+            ?>
+        </div>
 
-        <?php
-        include("product.php");
-        $sql = "SELECT * FROM storage";
-        $result = mysqli_query($conn, $sql);
-
-        ?>
-
-        <div class="right-side">
+        <div class="right-side1">
             <h2>CHECK IN</h2>
             <form action="db_checkin.php" method="post">
+                <!-- <div class="checkin-box"> -->
                 <lable for="product-id">Product ID</lable>
-                <select name="Product-id" id="product-id">
-                    <option value="">Choose...</option>
-
-                </select>
+                <input type="text" name="Product-id" placeholder="product id" required>
                 <br>
-                <lable for="storage-id">Storage ID</lable>
-                <select name="storage-id" id="storage-id">
-                    <option value="">Choose...</option>
-
-                    <?php
-                    while ($row = mysqli_fetch_assoc($result)) {
-                    ?>
-                        <option value="<?= $row["storage_Name"]; ?>"><?= $row["storage_Name"]; ?></option>
-                    <?php
-                    }
-                    ?>
-                </select>
+                <lable for="storage-id">Product Name</lable>
+                <input type="text" name="product-name" placeholder="product name" required>
+                <!-- </div> -->
                 <div>
-                    <button class="show-popup btn2" type="submit">
+                    <button class="show-popup btn2" type="submit" name="checkin-submit">
                         <p>Submit</p>
                     </button>
                 </div>
             </form>
         </div>
-        <!-- pop up -->
+        <!-- pop up
         <div class="popup-container">
             <div class="popup-box">
                 <h3>Check in</h3>
@@ -71,9 +70,9 @@ if (!isset($_SESSION['username'])) {
                         <button class="cancle-btn" type="button">Cancle</button>
                         <button class="btn2" id="checkin-check" type="submit">Check in</button>
                     </div>
-                </form>
-            </div>
-        </div>
+                </form> -->
+    </div>
+    </div>
 
     </div>
     <!-- js scripts -->
