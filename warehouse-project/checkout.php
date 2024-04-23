@@ -37,11 +37,17 @@ if (!isset($_SESSION['username'])) {
             <h2>CHECK OUT</h2>
             <form action="db_checkout.php" method="post">
                 <lable for="product-id">Product ID</lable>
+                <?php
+                $sql = "SELECT * FROM product";
+                $result = mysqli_query($conn, $sql);
+                ?>
                 <select name="Product-id" id="product-id">
                     <option value="">Choose...</option>
-                    <option value="red">61000</option>
-                    <option value="blue">45000</option>
-                    <option value="green">27000</option>
+                    <?php
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<option value='" . $row['productID'] . "'>" . $row['productID'] . "</option>";
+                    }
+                    ?>
                 </select>
                 <br>
                 <lable for="storage-id">Storage ID</lable>
