@@ -55,9 +55,7 @@ if (!isset($_SESSION['username'])) {
                     <option value="">Choose...</option>
                     <?php
                     while ($row = mysqli_fetch_assoc($result)) {
-                    ?>
-                        <option value="<?= $row["storage_Name"]; ?>"><?= $row["storage_Name"]; ?></option>
-                    <?php
+                        echo "<option value='" . $row["storage_Name"] . "'> " . $row["storage_Name"] . "</option>";
                     }
                     ?>
                 </select>
