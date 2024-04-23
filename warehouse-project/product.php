@@ -1,5 +1,3 @@
-<div class="left-side">
-    <div class="left-container">
         <div class="">
             <li class="box active">C3</li>
             <li class="box ">C2</li>
@@ -17,5 +15,3 @@
             <li class="box ">A2</li>
             <li class="box ">A1</li>
         </div>
-    </div>
-</div>
